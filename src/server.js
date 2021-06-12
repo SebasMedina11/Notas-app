@@ -6,7 +6,8 @@ const morgan = require('morgan')
 const method=require('method-override')
 const flash=require('connect-flash')
 const session = require('express-session')
-
+const passport=require('passport')
+require('./config/passport')
 
 //settings
 app.set('port', process.env.PORT || 3000)
@@ -28,11 +29,15 @@ app.use(session({
 	resave :true,
 	saveUninitialized: true
 }))
+app.use(passport.initialize())
+app.use(passport.session())
 app.use(flash())
 //global variables
 app.use((req,res,next)=>{
 	res.locals.success_mesg=req.flash('success_mesg')
 	res.locals.error_mesg=req.flash('error_mesg')
+	res.locals.error=req.flash('error')
+
 	next()
 })
 //routes

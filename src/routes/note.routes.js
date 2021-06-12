@@ -7,11 +7,11 @@ const {renderNoteForm,
 	 deleteNote} = require('../controllers/note.controller')
 
 //render form note add
-router.get('/notes/add', renderNoteForm)
-router.post('/notes/new', newNote)
-router.get('/notes',showNotes)
-router.get('/notes/edit/:id',editNotes)
-router.put('/note/edit/:id',updateNote)
-router.delete('/note/delete/:id',deleteNote)
+router.get('/product/add', renderNoteForm)
+router.post('/product/new', newNote)
+router.get('/products',showNotes)
+router.get('/product/edit/:id',editNotes)
+router.put('/product/edit/:id',updateNote)
+router.delete('/product/delete/:id',deleteNote)
 
 module.exports = router

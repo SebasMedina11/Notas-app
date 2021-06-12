@@ -1,10 +1,13 @@
 const userCtrl = {}
 const User = require('../models/user')
+const passport=require('passport')
 
 userCtrl.signUpForm=(req,res)=>{
+	console.log(req.body)
 	res.render('user/signUp')
 }
 userCtrl.signUp=async (req,res)=>{
+	console.log(req.body)
 	const errors=[]
 	const {name,email,password,confirm_password}=req.body
 	if(password != confirm_password){
@@ -29,12 +32,18 @@ userCtrl.signUp=async (req,res)=>{
 		}
 	}
 }
+userCtrl.changePassword = ()=>{
+	res.render(view[, locals][, callback])
+}
 userCtrl.signInForm=(req,res)=>{
+	
 	res.render('user/signIn')
 }
-userCtrl.SignIn= (req,res)=>{
-	res.send('send')
-}
+userCtrl.SignIn=passport.authenticate('local',{
+	failureRedirect:'/user/signin',
+	successRedirect:'/products',
+	failureFlash: true
+})
 userCtrl.logout =(req,res)=>{
 	res.send('logout')
 }

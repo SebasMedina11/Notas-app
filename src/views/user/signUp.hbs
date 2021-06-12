@@ -1,27 +1,31 @@
 <div class="row">
-	<div class="col-md-4 mx-auto">
-		<div class="card">
-			<div class="card-header">
-			</div>
-			<div class="card-body">
-				<form action="/signup" method="POST">
-					<div class="form-group">
-						<input type="text" name="name" class="form-control" placeholder="Name" autofocus value="{{name}}">
-					</div>
-					<div class="form-group">
-						<input type="email" name="email" class="form-control" placeholder="Email"value="{{email}}">
-					</div>
-					<div class="form-group">
-						<input type="password" name="password" class="form-control" placeholder="password" value="{{password}}">
-					</div>
-					<div class="form-group">
-						<input type="password" name="confirm_password" class="form-control" placeholder="confirm password">
-					</div>
-					<button class="btn btn-primary btn-block">Sign Up</button>
-				</form>
-			</div>
-		</div>
-
-	</div>
-
+    <div class="col-md-4 mx-auto">
+        <div class="card">
+            <div class="card-header">
+            </div>
+            <div class="card-body">
+                <form action="/signup" method="POST">
+                    <div class="form-group">
+                        <input autofocus="" class="form-control" name="name" placeholder="Name" type="text" value="{{name}}">
+                        </input>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" name="email" placeholder="Email" type="email" value="{{email}}">
+                        </input>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" name="password" placeholder="password" type="password" value="{{password}}">
+                        </input>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" name="confirm_password" placeholder="confirm password" type="password">
+                        </input>
+                    </div>
+                    <button class="btn btn-primary btn-block">
+                        Sign Up
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
